@@ -15,7 +15,9 @@ struct WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let view = WKWebView()
     
+        
         view.load(URLRequest(url: url))
+        view.isUserInteractionEnabled = false
         view.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
         return view
     }

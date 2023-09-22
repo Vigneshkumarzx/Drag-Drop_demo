@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct page: Identifiable {
+struct Page: Identifiable {
     
     var id = UUID()
     var url: URL

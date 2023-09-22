@@ -98,9 +98,12 @@ struct Home: View {
                             .cornerRadius(15)
                         
                             .onDrag {
+                                
+                                pageData.currentPage = page
+                                
                                 return NSItemProvider(contentsOf: URL(string: "\(page.url)")!)!
                             }
-                            .onDrop(of: [.url], delegate: DropDelgate())
+                            .onDrop(of: [.url], delegate: DropViewDelgate(page: page, pageData: pageData))
                     }
                 }
                 .padding()
